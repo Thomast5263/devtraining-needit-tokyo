@@ -47,13 +47,31 @@
     //}
 
     // thomas test
-    var test1 = rightnow.getLocalDate().compareTo(whenNeeded.getLocalDate()).toString();
-    var test2 = rightnow.getDate().equals(whenNeeded.getDate()).toString();
+    //var test1 = rightnow.getLocalDate().compareTo(whenNeeded.getLocalDate()).toString();
+    //var test2 = rightnow.getDate().equals(whenNeeded.getDate()).toString();
 
-    if (whenNeeded.before(rightnow) || (rightnow.getLocalDate().compareTo(whenNeeded.getLocalDate())) == 0) {
-        gs.addErrorMessage("needed date cannot be today or in the past - Thomas");
+    //if (whenNeeded.before(rightnow) || (rightnow.getLocalDate().compareTo(whenNeeded.getLocalDate())) == 0) {
+    //    gs.addErrorMessage("needed date cannot be today or in the past - Thomas");
+    //    current.setAbortAction(true);
+    //}
+	
+	// use Script Include here
+	
+	//must instantiate the NeedItUtils class
+	var niutils = new NeedItUtils();
+	var isPast = niutils.isDatePast(current.u_when_needed);
+	var isToday = niutils.isTodayDate(current.u_when_needed);
+	if(isPast || isToday){
+		gs.addErrorMessage("needed date cannot be today or in the past - Thomas");
         current.setAbortAction(true);
-    }
+	}
+	
+	
+	// end of use script include
+	
+	
+	
+	
     // if the When needed date is before the rightnow, do not write the record to the database but output the error message to screen
     //	if(whenNeeded.before(rightnow))
     //		{
@@ -76,7 +94,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>7d7ba8a52f222110c831206df699b68f</sys_id>
-        <sys_mod_count>18</sys_mod_count>
+        <sys_mod_count>19</sys_mod_count>
         <sys_name>NeedIt When needed field date</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -84,7 +102,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_7d7ba8a52f222110c831206df699b68f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-05-01 15:42:19</sys_updated_on>
+        <sys_updated_on>2023-05-04 15:14:04</sys_updated_on>
         <template/>
         <when>before</when>
     </sys_script>
