@@ -12,6 +12,20 @@
                 <element inactive_on_update="false" label="Legal" sequence="2" value="legal"/>
             </choice>
         </element>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Resolution" max_length="40" name="u_resolution" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Duplicate" sequence="0" value="1"/>
+                <element inactive_on_update="false" label="Known Error" sequence="1" value="2"/>
+                <element inactive_on_update="false" label="No Resolution Provided" sequence="2" value="3"/>
+                <element inactive_on_update="false" label="Resolved by Caller" sequence="3" value="4"/>
+                <element inactive_on_update="false" label="Resolved by Change" sequence="4" value="5"/>
+                <element inactive_on_update="false" label="Resolved by Problem" sequence="5" value="6"/>
+                <element inactive_on_update="false" label="Resolved by Request" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Solution Provided" sequence="7" value="8"/>
+                <element inactive_on_update="false" label="Workaround Provided" sequence="8" value="9"/>
+                <element inactive_on_update="false" label="User Error" sequence="9" value="10"/>
+            </choice>
+        </element>
         <element attributes="edge_encryption_enabled=true" choice="3" default="legal1" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
             <choice>
                 <element inactive_on_update="false" label="Human Resources 1" sequence="0" value="hr1"/>
